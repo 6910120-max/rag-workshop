@@ -21,5 +21,11 @@ jobs:
       - name: Run tests
         run: pytest -q
 
+      - name: Workshop 4 targets
+        run: pytest -q -m w4
+
       - name: Retrieval eval (dev)
         run: python -m rag.evaluate --split dev --method tfidf -k 4 --min-hit 0.9
+
+      - name: Retrieval eval (dev, hybrid)
+        run: python -m rag.evaluate --split dev --method hybrid -k 4 --min-hit 0.9
